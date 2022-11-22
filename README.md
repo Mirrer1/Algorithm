@@ -37,7 +37,7 @@ Made by [**@Mirrer**](https://www.instagram.com/mirrerlike_/)
 <br />
 
 
-## Convey your Opinion
+## Contact
 
 **Feedback**은 아래 메일을 통해 전달해주시면 감사하겠습니다.
 
