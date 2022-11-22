@@ -12,7 +12,7 @@
 <br />
 
 
-## Language
+## Used Language
 
 - **JavaScript**
 
