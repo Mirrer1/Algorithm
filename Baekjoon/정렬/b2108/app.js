@@ -8,31 +8,23 @@ const list = input.sort((a, b) => a - b);
 const avg = Math.round(list.reduce((a, b) => a + b, 0) / num);
 const median = list[Math.floor(num / 2)];
 
-let modeCount = 0;
-let mode = [];
-for (let i = 0; i < num; i++) {  
-  const count = list.filter(v => v === list[i]).length;  
-  if (count === modeCount) {
-    modeCount = count;
-    mode.push(list[i]);
-  } else if (count > modeCount) {
-    modeCount = count;
-    mode = [list[i]];
-  };
-};
-const modeResult = [...new Set(mode)];
-const diff = Math.max(...list) - Math.min(...list);
+const map = new Map();
+let max = 1;
+for (let number of list) {
+  if (map.has(number)) {
+    max = Math.max(max, map.get(number) + 1);
+    map.set(number, map.get(number) + 1);
+  } else {
+    map.set(number, 1);
+  }
+}
 
-if (avg === -0) {
-  console.log(0);
-} else {
-  console.log(avg);
+const maxArr = [];
+for (let [key, val] of map) {
+  if (val === max) maxArr.push(key);
 }
+
+console.log(avg === -0 ? 0 : avg);
 console.log(median);
-if (list.length === 1) {
-  console.log(list[0]);  
-  console.log(0);
-} else {
-  console.log(modeResult.length === 1 ? modeResult[0] : modeResult[1]);
-  console.log(diff);
-}
+console.log(maxArr.length === 1 ? maxArr[0] : maxArr[1]);
+console.log(list[num - 1] - list[0]);
