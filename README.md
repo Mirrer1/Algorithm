@@ -1,6 +1,6 @@
 # Project Title
 
-- **The-Algorithms**
+- **The_Algorithms**
 
 
 <br />
