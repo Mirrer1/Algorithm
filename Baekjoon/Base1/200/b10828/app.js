@@ -1,34 +1,44 @@
-const fs = require('fs');
-const filePath = process.platform === 'linux' ? '/dev/stdin' : 'input.txt';
-const input = fs.readFileSync(filePath).toString().trim().split('\n');
-
-const num = +input.shift();
-const list = input.map(v => v.split(' '));
-
-const stack = [];
-const result = [];
-
-for (let i = 0; i < num; i++) {
-  const command = list[i][0];
+const solution = input => {  
+  const num = +input.shift();
+  const list = input;
   
-  switch (command) {
-    case 'push':
-      console.log('push');
-      break;
-    case 'pop':
-      console.log('pop');
-      break;
-    case 'size':
-      console.log('size');
-      break;
-    case 'empty':
-      console.log('empty');
-      break;
-    case 'top':
-      console.log('top');
-      break;
-    default:
-      console.log('default');
-      break;
-  }      
+  const stack = [];
+  const result = [];
+  
+  for (let i = 0; i < num; i++) {
+    const command = list[i].split(' ');
+    
+    switch (command[0]) {
+      case 'push':    
+        stack.unshift(+command[1]);
+        break;
+      case 'pop':   
+        stack.length === 0 ? result.push(-1) : result.push(stack.shift());        
+        break;
+      case 'size':      
+        result.push(stack.length);
+        break;
+      case 'empty':       
+      stack.length === 0 ? result.push(1) : result.push(0);
+        break;
+      case 'top':      
+        stack.length === 0 ? result.push(-1) : result.push(stack[0]);
+        break;
+      default:       
+        break;
+    }      
+  }  
+  console.log(result.join('\n'));
 }
+
+const input = [];
+require('readline')
+  .createInterface(process.stdin, process.stdout)
+  .on('line', line => {
+    input.push(line);
+    
+  })
+  .on('close', () => {    
+    solution(input);
+    process.exit();
+  })
