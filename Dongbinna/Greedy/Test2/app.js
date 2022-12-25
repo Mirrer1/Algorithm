@@ -12,5 +12,5 @@ while (true) {
   n /= k;
 }
 
-result += (n - 1);
+result--;
 console.log(result);
