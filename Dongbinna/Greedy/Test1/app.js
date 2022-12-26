@@ -1,4 +1,4 @@
-const array = [500,100,50,10];
+const array = [500, 100, 50, 10];
 let n = 1260;
 let count = 0;
 
