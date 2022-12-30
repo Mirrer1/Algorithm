@@ -29,4 +29,4 @@ function quickSort(array, left = 0, right = array.length - 1) {
   return array;
 }
 
-console.log(quickSort(arr));
+console.log(quickSort(arr).join(' '));
