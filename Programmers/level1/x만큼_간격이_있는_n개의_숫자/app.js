@@ -10,7 +10,7 @@ function solution(x, n) {
 }
 
 // 다른 사람의 풀이
-// 아래 풀이가 더 간결하지만 성능상으로는 for가 더 적합
+// 해당 풀이가 더 간결하지만 성능상으로는 for가 더 적합
 function solution(x, n) {
   return Array(n).fill(x).map((v, i) => (i + 1) * v)
 }
