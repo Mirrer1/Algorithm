@@ -10,8 +10,8 @@ function solution(s) {
     for (let i = 0; i < s.length; i++) {
       s[0] === s[i] ? x += 1 : y += 1;
       if (x === y) {
-          count = i + 1;
-          break;
+        count = i + 1;
+        break;
       }
     }
 
